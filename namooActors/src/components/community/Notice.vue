@@ -29,10 +29,68 @@
 
         <v-row>
             <v-col cols="12" md="2"></v-col>
-            <v-col cols="12" md="8">
-                <v-card class="pa-6 notice-card" v-for="n in 6" :key=n>
+            <v-col cols="12" md="4">
+                <v-card class="pa-6 notice-card">
                     <v-card-subtitle class="notice-tag">Artists</v-card-subtitle>
-                    <v-card-title>[서현] 영화 &&lt;거룩한 밤: 데몬 헌터스&gt; 시사회 초대 이벤트 안내</v-card-title>
+                    <v-card-title class="stitle24-1">[서현] 영화 &&lt;거룩한 밤: 데몬 헌터스&gt; 시사회 초대 이벤트 안내</v-card-title>
+                    <v-card-subtitle class="date">
+                        2025.04.14
+                    </v-card-subtitle>
+                </v-card>
+            </v-col>
+
+            <v-col cols="12" md="4">
+                <v-card class="pa-6 notice-card">
+                    <v-card-subtitle class="notice-tag">Artists</v-card-subtitle>
+                    <v-card-title class="stitle24-1">[서현] 영화 &&lt;거룩한 밤: 데몬 헌터스&gt; 시사회 초대 이벤트 안내</v-card-title>
+                    <v-card-subtitle class="date">
+                        2025.04.14
+                    </v-card-subtitle>
+                </v-card>
+            </v-col>
+            <v-col cols="12" md="2"></v-col>
+        </v-row>
+
+        <v-row>
+            <v-col cols="12" md="2"></v-col>
+            <v-col cols="12" md="4">
+                <v-card class="pa-6 notice-card">
+                    <v-card-subtitle class="notice-tag">Artists</v-card-subtitle>
+                    <v-card-title class="stitle24-1">[서현] 영화 &&lt;거룩한 밤: 데몬 헌터스&gt; 시사회 초대 이벤트 안내</v-card-title>
+                    <v-card-subtitle class="date">
+                        2025.04.14
+                    </v-card-subtitle>
+                </v-card>
+            </v-col>
+
+            <v-col cols="12" md="4">
+                <v-card class="pa-6 notice-card">
+                    <v-card-subtitle class="notice-tag">Artists</v-card-subtitle>
+                    <v-card-title class="stitle24-1">[서현] 영화 &&lt;거룩한 밤: 데몬 헌터스&gt; 시사회 초대 이벤트 안내</v-card-title>
+                    <v-card-subtitle class="date">
+                        2025.04.14
+                    </v-card-subtitle>
+                </v-card>
+            </v-col>
+            <v-col cols="12" md="2"></v-col>
+        </v-row>
+
+        <v-row>
+            <v-col cols="12" md="2"></v-col>
+            <v-col cols="12" md="4">
+                <v-card class="pa-6 notice-card">
+                    <v-card-subtitle class="notice-tag">Artists</v-card-subtitle>
+                    <v-card-title class="stitle24-1">[서현] 영화 &&lt;거룩한 밤: 데몬 헌터스&gt; 시사회 초대 이벤트 안내</v-card-title>
+                    <v-card-subtitle class="date">
+                        2025.04.14
+                    </v-card-subtitle>
+                </v-card>
+            </v-col>
+
+            <v-col cols="12" md="4">
+                <v-card class="pa-6 notice-card">
+                    <v-card-subtitle class="notice-tag">Artists</v-card-subtitle>
+                    <v-card-title class="stitle24-1">[서현] 영화 &&lt;거룩한 밤: 데몬 헌터스&gt; 시사회 초대 이벤트 안내</v-card-title>
                     <v-card-subtitle class="date">
                         2025.04.14
                     </v-card-subtitle>
