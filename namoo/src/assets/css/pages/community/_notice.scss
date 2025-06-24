@@ -1,0 +1,78 @@
+/* ===================
+공지 리스트 시작
+==================== */
+.notice-card{
+
+    display:flex;
+    flex-direction:column;
+    aspect-ratio:1.4625/1;
+    border:1px solid #d9d9d9;
+    box-shadow:none;
+    border-radius: 0px;
+    width:100%;
+    max-width:585px;
+    padding:clamp(27px, 2.2917vw, 44px);
+
+    .notice-tag{
+        padding:6px 10px;
+        color: #83A667;
+        border:1px solid #83A667;
+        text-transform: uppercase;
+        align-self: flex-start;
+    }
+
+    .stitle24-1{
+        padding:0;
+        margin-top:0.625em;
+        white-space: normal;
+        overflow: visible;
+        display: block;
+        word-break: keep-all;
+    }
+
+    .date{margin-top:auto;}
+}
+/* ===================
+공지 리스트 종료
+======================
+
+
+
+
+======================
+슬라이더 시작
+==================== */
+.notice-slide{
+    max-height:74px;
+    min-height:52px;
+    height:3.8542vw;
+    border-top:3px solid #000;
+    border-bottom: 2px solid #000;
+    margin-top:clamp(70px, 5.2083vw, 100px);
+    margin-bottom:clamp(40px, 2.6042vw, 50px);
+
+    .slide-content{
+        display: flex;
+        align-items: center;
+        vertical-align:middle;
+        cursor: pointer;
+        height: 3em;
+
+        .slide-icon{
+            color: #83a667;
+            padding-left:10px;
+        }
+
+        .slide-title{
+            display:inline-block;
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            font-weight:700;
+            padding-left:10px;
+        }
+    }
+}
+/* ===================
+슬라이더 종료
+==================== */
