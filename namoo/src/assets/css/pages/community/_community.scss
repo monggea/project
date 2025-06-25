@@ -33,8 +33,14 @@ search
             min-height:27.83px;
             height:2.08vw;
         }
-    }    
+    }
 
+    .v-autocomplete__selection{
+        position:absolute;
+        width:90%;
+    }
+
+    
     .v-input__control input::placeholder{
         font-size:clamp(12px,0.73vw,14px);
     }

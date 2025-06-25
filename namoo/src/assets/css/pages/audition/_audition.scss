@@ -1,0 +1,247 @@
+@import 'faq';
+
+
+.audition{
+    .stitle36-1{
+        line-height:125%;
+        font-weight:600;
+        margin-bottom:100px;
+    }
+
+    .title24{font-weight:400;
+        border:1px solid red;
+        margin-bottom:50px;
+        @media (max-width:960px){margin-bottom:28px;}
+    }
+
+    /* ====================
+    오디션 안내 시작
+    ======================*/
+    .info-row{gap:clamp(15px,1.0417vw,20px);}
+    .info-list{white-space: nowrap;}
+
+    .info-col{
+        gap:clamp(25px,2.0833vw,40px);
+        .info-col-gap{gap:clamp(10px,1.1458vw,22px);           }
+        .info-col-gap-sm{
+            gap:5px;
+            word-break: keep-all;
+            .body14{color:#999;}
+        }
+    }
+    /* ====================
+    오디션 안내 종료
+    =======================
+
+
+
+    =======================
+    제출 서류 안내 시작
+    ======================*/
+    .document-col{}
+
+
+    /*=====================
+    제출 서류 안내 종료
+    ======================*/
+
+}
+
+
+
+/* 오디션 절차 스타일 */
+.circle-step.small {
+  width: 15vw;        /* 뷰포트 너비 기준 */
+  height: 15vw;
+  max-width: 120px;
+  max-height: 120px;
+  min-width: 60px;
+  min-height: 60px;
+  border: 1.5px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(12px, 2vw, 14px);
+  margin: 0 auto;
+}
+
+.round-step.small {
+  width: clamp(50px, 12vw, 70px);
+  height: clamp(28px, 6vw, 40px);
+  background-color: #83A667;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(10px, 2.5vw, 14px);
+  margin: 0 auto;
+  margin-top: clamp(16px, 4vw, 30px);
+  color: white;
+}
+
+.step-desc {
+  font-size: clamp(10px, 1.5vw, 14px);
+  margin-top: 6px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.audition-flow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+/* 제출서류 스타일 */
+.left-box {
+  padding-right: 32px;
+}
+.left-label {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+.right-label-box {
+  padding-left: 32px;
+}
+.right-label-box .right-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 48px; /* 사진과 영상 타이틀 사이 간격 */
+  text-align: left;
+}
+
+/* 제출 서류 다운로드 버튼 */
+/* .custom-download-btn {
+  border: 1.5px solid #89A56D;
+  border-radius: 999px;
+  color: #89A56D;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 20px;
+  text-transform: none;
+  min-width: auto;
+  height: 38px;
+} */
+/* .custom-download-btn:hover {
+  background-color: #f5faf4;
+} */
+.custom-icon {
+  margin-right: 0px;
+  width:24px;
+  height:24px; 
+}
+
+.bo{
+  border-top:2px solid black;
+  border-bottom:2px solid black;
+}
+
+/* 사진/영상 본문 */
+.right-content-box {
+  padding-left: 16px;
+}
+.content-section {
+  margin-bottom: 48px; /* 사진과 영상 본문 사이 간격 */
+}
+.content-section:last-child {
+  margin-bottom: 0;
+}
+.content-section p {
+  margin-bottom: 8px;
+}
+
+/* 마진 & 패딩 */
+.pl2 {
+  padding-left: 28px;
+}
+.pr2 {
+  padding-right: 28px;
+}
+.mb1 {
+  margin-bottom: 24px;
+}
+.mb4 {
+  margin-bottom: 40px;
+}
+.mb5{
+  margin-bottom: 44px;
+}
+.mb6 {
+  margin-bottom: 48px;
+}
+.mb7 {
+  margin-bottom: 72px;
+}
+.mb8 {
+  margin-bottom: 80px;
+}
+.mb10 {
+  margin-bottom: 96px;
+}
+.mb12 {
+  margin-bottom: 96px;
+}
+.mt1 {
+  margin-top: 24px;
+}
+.mt2 {
+  margin-top: 16px;
+}
+.mt3 {
+  margin-top: 32px;
+}
+.mt6 {
+  margin-top: 48px;
+}
+.ml6 {
+  margin-left: 48px;
+}
+.ml1 {
+  margin-left: 24px;
+}
+.mr2 {
+  margin-right: 28px;
+}
+.mr6 {
+  margin-right: 48px;
+}
+
+/*글자색 */
+.gr{
+  color:#999999;
+}
+.red{
+  color:#A12A2A;
+  font-weight:bold;
+}
+
+/*전체*/
+ul, ol, li {
+  list-style: initial !important; /* 기본값 복원 */
+}
+
+.con5{
+  min-width:52px;
+  
+}
+
+.t2{
+  min-width:55px;
+}
+
+/* 기본은 줄바꿈 숨김 (큰 화면에서는 한 줄로) */
+.mobile {
+  display: none;
+}
+
+/* 모바일 등 작은 화면에서 줄바꿈 활성화 */
+@media (max-width: 600px) {
+  .mobile {
+    display: inline;
+  }
+}

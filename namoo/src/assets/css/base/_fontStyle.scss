@@ -14,19 +14,12 @@
 
 .stitle36-1{font-size: clamp(20px, 1.875vw, 36px)} //오디션 등 일부의 서브 타이틀
 .stitle36-2{font-size: clamp(16px, 1.875vw, 36px)} //공지 타이틀, 브랜드 아이덴티티
-
-.stitle24-1{font-size: clamp(16px, 1.25vw, 24px)}
-.stitle24-2{font-size: clamp(18px, 1.25vw, 24px)}
-
-.stitle16{font-size: clamp(14px, 0.83vw, 16px)}
-.stitle16{font-size: clamp(10px, 0.83vw, 16px)} //오디션 절차 한정
+.stitle24{font-size: clamp(18px, 1.25vw, 24px) !important;}
 
 .body20{font-size: clamp(16px, 1.04vw, 20px)}
 
 .body16{font-size: clamp(14px, 0.83vw, 16px)}
 .body14{font-size: clamp(12px, 0.73vw, 14px)}
-
-.body14{font-size: clamp(10px, 0.73vw, 14px)} //메인/작품/태그
 
 /* Body - btn & tab */
 .btn16{font-size: clamp(12px, 0.83vw, 16px)} 
@@ -34,5 +27,4 @@
 
 /* Footer */
 .caption14{font-size: clamp(10px, 0.73vw, 14px)}
-.caption12s{font-size: clamp(10px, 0.63vw, 12px)}
-.caption12b{font-size: clamp(10px, 0.63vw, 12px)}
+.caption12{font-size: clamp(10px, 0.63vw, 12px)}

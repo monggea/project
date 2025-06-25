@@ -4,8 +4,10 @@ html, html *{
     border:0; outline:0;
     font-size:100%;
     font-family:sans-serif;
-    vertical-align:middle;
+    vertical-align:baseline;
+    transition: all .5s;
 }
 
 a{color:inherit;}
 ul, ol, li{list-style-type:none;}
+.v-btn{letter-spacing:0;}

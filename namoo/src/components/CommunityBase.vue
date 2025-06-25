@@ -1,9 +1,9 @@
 <template>
-    <v-container>
+    <v-container fluid>
         
-        <v-row class="grid12">
+        <v-row class="grid12 bottom-title">
         <v-col cols="12"><h1 class="title72 top-title">Community.</h1></v-col>
-        <v-col cols="12" class="d-flex justify-space-between align-bottom">
+        <v-col cols="12" class="d-flex justify-space-between align-bottom py-0">
 
             <!-- ================
             카테고리 탭
@@ -74,7 +74,7 @@
                 <v-img :src="item.img"></v-img>
                 <v-card-subtitle class="date mt-3 mb-1">{{ item.date }}</v-card-subtitle>
                 <v-card-title class="news-title">
-                    <div class="stitle24-1">{{ item.title }}</div>
+                    <div class="title24">{{ item.title }}</div>
                 </v-card-title>
             </v-card>
 
@@ -84,7 +84,7 @@
                 @click="$emit('card-click', item)">
 
                 <v-card-subtitle class="notice-tag">{{item.tag}}</v-card-subtitle>
-                <v-card-title class="stitle24-1">{{ item.title }}</v-card-title>
+                <v-card-title class="title24">{{ item.title }}</v-card-title>
                 <v-card-subtitle class="date">{{item.date}}</v-card-subtitle>
             </v-card>
         </v-col>

@@ -21,7 +21,7 @@
         align-self: flex-start;
     }
 
-    .stitle24-1{
+    .title24{
         padding:0;
         margin-top:0.625em;
         white-space: normal;
@@ -47,8 +47,7 @@
     min-height:52px;
     height:3.8542vw;
     border-top:3px solid #000;
-    border-bottom: 2px solid #000;
-    margin-top:clamp(70px, 5.2083vw, 100px);
+    border-bottom: 2px solid #000; 
     margin-bottom:clamp(40px, 2.6042vw, 50px);
 
     .slide-content{

@@ -8,23 +8,22 @@
     :class="[{ 'nav-border': isScrolled }, 'transition-navbar']"
   >
     <v-toolbar-title class="font-weight-bold t1 fixed-title">
-      <v-btn text :to="'/'" size="100%">
+      <v-btn text :to="'/'" class="logo ml-7">
         <div class="but"></div>
       </v-btn>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
 
-    <v-btn class="mr-9" text :to="'/company'">COMPANY</v-btn>
-    <v-btn class="mr-9" text :to="'/artist'">ARTIST</v-btn>
-    <v-btn class="mr-9" text :to="'/news'">NEWS</v-btn>
-    <v-btn class="mr-10" text :to="'/audition'">AUDITION</v-btn>
+    <v-btn class="mr-9" text :to="'/company'">company</v-btn>
+    <v-btn class="mr-9" text :to="'/artist'">artist</v-btn>
+    <v-btn class="mr-9" text :to="'/news'">community</v-btn>
+    <v-btn class="mr-10" text :to="'/audition'">audition</v-btn>
   </v-app-bar>
-
 </template>
 
 <script>
-export default {
+export default { 
   name: "Header",
   data() {
     return {
@@ -42,7 +41,7 @@ export default {
     handleScroll() {
       const scrollY = window.scrollY;
       this.isScrolled = scrollY > 0;
-      this.isOpaque = scrollY > 1080; // 100px 넘으면 배경색 채움, 조절 가능
+      this.isOpaque = scrollY > 1; // 100px 넘으면 배경색 채움, 조절 가능
     },
   },
 };
@@ -58,9 +57,13 @@ export default {
 .but {
   background-image: url(../assets/img/logo.png);
   background-size: cover;
-  width: 100px;
-  height: 40px;
+  position:fixed;
+  width: 175px;
+  height: 55px;
+
+
 }
+
 
 .nav-border {
   border-bottom: 2px solid black;
@@ -74,4 +77,5 @@ export default {
   margin: 0;
   padding: 0;
 }
+
 </style>

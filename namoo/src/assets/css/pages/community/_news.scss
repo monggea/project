@@ -3,7 +3,7 @@
     flex-direction:column;
     border-bottom:1px solid #d9d9d9;
     box-shadow:none;
-    border-radius:0px;
+    border-radius:10px 10px 0 0;
     width:100%;
     max-width:585px;
 
@@ -24,7 +24,7 @@
         height:5.2083vw;
         padding:0;
 
-        .stitle24-1{
+        .title24{
             padding:0; width:100%;
             display: -webkit-box;
             -webkit-box-orient: vertical;

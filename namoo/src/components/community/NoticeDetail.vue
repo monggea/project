@@ -1,9 +1,9 @@
 <template>
-    <v-container v-if="notice">
-    <v-row class="grid12">
+    <v-container v-if="notice" fluid>
+    <v-row class="grid12 bottom-title">
         <v-col cols="12"><h1 class="title72 top-title">Notice.</h1></v-col>
 
-        <v-col cols="12" class="align-bottom">
+        <v-col cols="12" class="align-bottom py-0">
 
             <!-- ================
             세부 카테고리 스위치
@@ -19,11 +19,11 @@
                 >Notice
             </v-btn>
             </div>
-
-            <div class="top-line"></div>
         </v-col>
+    </v-row>
 
-
+    <v-row class="grid12">
+        <div class="top-line ml-3"></div>
         <!-- ================
         게시글
         ================== -->
