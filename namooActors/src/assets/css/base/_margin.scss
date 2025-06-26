@@ -1,0 +1,21 @@
+.grid12{margin:0 auto; max-width:1200px;}
+.grid15{margin:0 auto; max-width:1500px;}
+
+.top-title{ margin-top: 200px;
+  @media (max-width: 960px){margin-top: 142px;}
+}
+
+.bottom-title{margin-bottom:100px;
+  @media (max-width:960px){margin-bottom:70px;}
+}
+
+.top-line{margin-bottom:36px;
+  @media (max-width:960px){margin-bottom:30px;}
+}
+
+.m100{margin-bottom:100px;}
+.m85{margin-bottom:85px;
+  @media(max-width:960px){margin-bottom:70px;}
+}
+
+.m40{margin-bottom:40px}

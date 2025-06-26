@@ -1,0 +1,87 @@
+.faq-wrap{
+  border:1px solid red;
+}
+
+
+.faq-answer {
+  white-space: pre-line;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #444;
+  padding: 8px 0 16px 32px;
+}
+.faq-item {
+  margin-bottom: 12px;
+}
+.top {
+  margin-top: 120px;
+}
+
+
+.ti {
+  margin-top: 32px;
+  margin-bottom: 44px;
+}
+
+/* 외곽 테두리 */
+.bo1 {
+  border-top: 2px solid black;
+}
+
+/* 구분선 스타일 */
+.divider-gray {
+  height: 1px;
+  background-color: #ccc;
+  margin-top: 12px;
+}
+.divider-black {
+  height: 3px;
+  background-color: black;
+  margin-top: 12px;
+}
+
+/* 여백 클래스 */
+.ml1 {
+  margin-left: 24px;
+}
+.ml6 {
+  margin-left: 48px;
+}
+.ml7 {
+  margin-left: 63px;
+}
+.mb4 {
+  margin-bottom: 40px;
+}
+.mt3 {
+  margin-top: 32px;
+}
+.mb5 {
+  margin-bottom: 44px;
+}
+.mb12 {
+  margin-bottom: 96px;
+}
+.mr6 {
+  margin-right: 48px;
+}
+
+/* 아이콘 버튼 스타일 */
+.v-btn.v-btn--icon {
+  background-color: transparent !important;
+  box-shadow: none !important;
+
+  .v-icon{color:#000;}
+}
+
+/* 기본값: 큰 화면에서는 줄바꿈 안 보임 */
+.mobile-br {
+  display: none;
+}
+
+/* 화면이 작아질 경우: 줄바꿈 보이게 */
+@media (max-width: 600px) {
+  .mobile-br {
+    display: inline;
+  }
+}

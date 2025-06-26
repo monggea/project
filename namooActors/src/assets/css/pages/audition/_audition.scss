@@ -1,0 +1,159 @@
+@import 'faq';
+
+
+.m120{margin-bottom:120px;
+@media (max-width:960px){margin-bottom:50px;}}
+
+.m70{margin-bottom:70px;
+@media (max-width:960px){margin-bottom:50px;}}
+
+
+.audition{
+  
+  .stitle36-1{
+    line-height:125%;
+    font-weight:600;
+    margin-bottom:100px;
+  }
+
+  .title24{font-weight:400;
+    margin-bottom:50px;
+    @media (max-width:960px){margin-bottom:28px;}
+  }
+
+
+  /* ====================
+  오디션/서류 안내 시작
+  ======================*/
+
+  .info-row{gap:clamp(15px,1.0417vw,20px);}
+  .info-doc{
+    border-top:3px solid #000;
+    border-bottom:2px solid #000;
+  }
+
+  .info-list{
+    white-space: nowrap;
+    min-width:60px;
+  }
+  
+  .doc-col{gap:24px;}
+  .info-col{gap:clamp(25px,2.0833vw,40px);}
+  .info-col-gap{gap:clamp(10px,1.1458vw,20px);}
+  .doc-col-gap-sm{gap:clamp(10px,0.8854vw, 17px);}
+  .info-col-gap-sm{
+    gap:5px; word-break: keep-all;
+    .body14{color:#999;}
+  }
+
+  .doc-bold{font-weight:600}
+  .doc-btn{margin-top:8px !important;}
+
+  /* ====================
+  오디션/서류 안내 종료
+  =======================
+
+
+
+  =======================
+  주의사항 시작
+  ======================*/
+  .info-warning{
+
+    .title24{margin:60px auto 50px;}
+    .v-icon{font-size:110%; vertical-align: baseline;}
+
+    .info-warning-list{
+      color:#999;
+      gap:15px;
+      @media (max-width:960px){gap:10px;}
+
+      .info-warning-ex{
+        padding-top:10px;
+        padding-left:16px;
+        gap:5px;
+        @media (max-width:960px){gap:0px;}
+      }
+    }
+  }
+
+  /*=====================
+  주의사항 종료
+  =======================
+
+
+
+  =======================
+  오디션 절차 시작
+  ======================*/
+
+  .info-step{
+    display:flex;
+    align-items:flex-start;
+    max-width:758px;
+
+    .step-line{
+      position:relative;
+      width:100%;
+      align-items:center;
+
+      .step-circle{
+        width: clamp(70px, 7vw, 120px);
+        aspect-ratio:1/1;      
+        border:1px solid #000;
+        border-radius:100px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        background-color:white;
+        z-index:1;
+      }
+      
+      .step-num{
+        display:flex;
+        justify-content:space-around;
+        height:clamp(30px, 2.8646vw, 55px);
+        flex: 1;
+        z-index:1;
+
+        .step-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+
+          .step-green{
+            color:white;
+            border-radius:50px;
+            background-color:#83A667;
+            width:clamp(40px,3.8021vw, 73px);
+            aspect-ratio:4/3;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+          }
+
+          .step-sm {color: #999;}
+        }
+      }
+
+      .timeline-line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #e9e9e9;
+
+      }
+
+
+    }
+  }
+}
+
+  /*=====================
+  오디션 절차 종료
+  =====================*/
