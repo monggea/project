@@ -1,0 +1,141 @@
+/*==================
+ArtistTop.vue
+==================*/
+.actors-top{
+    margin:200px auto 0;
+    @media(max-width:960px){margin-top:142px}
+    @media(max-width:600px){margin-top:0px}
+}
+
+.actors-info{
+
+    padding:0 !important;
+    display:flex;
+    align-items: flex-start;
+    justify-content:flex-start;
+    gap:clamp(10px, 7.8125vw, 150px);
+    @media (max-width:600px){position:relative}
+
+
+
+
+    .actors-img{
+
+        width:clamp(360px, 30.4167vw, 584px);
+        height:auto !important;
+        aspect-ratio: 584/800;
+
+        border:1px solid #000;
+        border-radius:10px;
+
+        @media(max-width:600px){
+            width:100vw;
+            border:none;
+            border-radius:0;
+        }
+    }
+
+
+
+
+    .actors-profile{all:unset;
+
+        @media (max-width:600px){
+            position:absolute;
+            bottom:0;left:0;
+            margin-left:23px;
+            margin-bottom:32px;
+            color:white;
+        }
+
+        .actors-title{
+            font-weight:900;
+            text-transform: uppercase;
+            padding-top:clamp(50px,7.8125vw,150px);
+        }
+
+        .actors-subtitle{
+            color:#000;
+            margin-top:15px;
+            font-weight:500;
+            gap:25px;
+
+            @media (max-width:600px){
+                margin-top:0;
+                font-weight:400;
+                color:white !important;
+
+            }
+
+            .actors-line{border: 1px solid #000;
+                height:clamp(14px, 1.04vw, 20px);
+            }
+        }
+
+        .top-line{
+            margin-top:60px;
+            @media (max-width:960px){
+            margin-top:50px;}
+        }
+
+        .actors-list{
+            white-space: nowrap;
+            min-width:60px;
+        }
+
+        
+    }
+}
+
+.actors-col-gap{
+    gap:clamp(5px, 0.7813vw,15px);
+    overflow: visible;
+    display: block;
+    word-break: keep-all;
+}
+
+
+
+/*==================
+ArtistTabs.vue
+==================*/
+.actors-tab{
+    border:1px solid red;
+    all:unset !important;
+    
+    
+    .actors-tab-btn{
+        all:unset;
+        color:#83A667;
+        height:auto !important;
+        margin-right: 0.625em !important;
+        padding:0.625em 1.25em !important;
+        font-size: clamp(10px, 0.83vw, 16px);
+        text-transform:capitalize;
+        border:1px solid #83A667;
+        border-radius:50px !important;
+
+        &:focus,
+        &:active,
+        &:hover,
+        &.active-btn{
+            text-shadow:none;
+            box-shadow:none;
+            color:white;
+            background-color: #83a667;
+        }
+    }
+}
+
+.actors-tab-content{
+    border: 1px solid blue;
+    .actors-tab-content-group{
+        border:1px dashed blue;
+        all: unset;
+
+        .actors-tab-content-outline{
+            border:1px solid coral;
+            border-radius:10px;
+        }
+    }
+}
