@@ -1,7 +1,7 @@
 export default [
     { 
         id: 'kang-kiyoung',
-        url: 'profile/Kangkiyoung.jpg',
+        url: 'Kangkiyoung.jpg',
         name: 'kang ki young',
         mName: `kang<br>ki young`,
         kName:'강기영',
@@ -14,9 +14,9 @@ export default [
             '2018 MBC 연기대상 수목미니시리즈부문 조연상',
         ],
 
-        profile:[
-            'kky/slide1.jpg',
-            'kky/slide2.jpg'
+        slideImg:[
+            'kky/slide/slide1.jpg',
+            'kky/slide/slide2.jpg'
         ],
 
         

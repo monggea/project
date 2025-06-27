@@ -1,7 +1,7 @@
 export default [
     { 
         id: 'kim-joohyuck',
-        url: 'profile/Kimjoohyuck.jpg',
+        url: 'Kimjoohyuck.jpg',
         name: 'kim joo hyuck',
         mName:`kim<br>joo hyuck`,
         kName:'김주혁',

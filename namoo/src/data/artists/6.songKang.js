@@ -1,7 +1,7 @@
 export default [
     { 
         id: 'song-kang',
-        url: 'profile/Songkang.jpg',
+        url: 'Songkang.jpg',
         name: 'song kang',
         mName:`song<br>kang`,
         kName:'송강',

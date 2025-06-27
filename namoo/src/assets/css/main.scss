@@ -4,8 +4,8 @@
 @use 'base/margin';
 
 @use 'components/button';
-// @use 'components/header';
-// @use 'components/footer';
+@use 'components/header';
+@use 'components/footer';
 
 @use 'pages/home';
 @use 'pages/community/community';

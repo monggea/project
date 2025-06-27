@@ -129,6 +129,15 @@ ul, ol, li {
   }
 }
 
+.bottom-button {
+  margin-bottom: 70px;
+}
+@media (max-width: 960px) {
+  .bottom-button {
+    margin-bottom: 20px;
+  }
+}
+
 .top-line {
   margin-bottom: 36px;
 }
@@ -165,13 +174,301 @@ ul, ol, li {
   border: 1px solid #83A667;
   border-radius: 50px;
   box-shadow: none;
-  margin-top: 23px;
+  margin-top: clamp(15px, 1.1979vw, 23px);
 }
 .top-btn:focus, .top-btn:active, .top-btn:hover, .top-btn.active-btn {
   text-shadow: none;
   box-shadow: none;
   color: white;
   background-color: #83a667;
+}
+
+.v-app-bar {
+  width: 100%;
+  height: 120px;
+  padding: 0 24px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+@media (max-width: 960px) {
+  .v-app-bar {
+    height: 80px;
+  }
+}
+.nav-border {
+  border-bottom: 2px solid black;
+}
+
+.fixed-title {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.menu-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: 24px;
+}
+
+.menu-btn {
+  font-size: clamp(0.875rem, 1vw, 1.125rem);
+  font-weight: 600;
+  color: black;
+  background-color: transparent !important;
+  text-transform: uppercase;
+  margin-top: 42px;
+}
+
+.active-tab {
+  color: #76a84c !important;
+}
+
+.but {
+  background-image: url("@/assets/img/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 50px;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .logo-img {
+    width: 100px;
+    height: 35px;
+  }
+}
+.logo-area {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 드로어: 좌측 고정, 선 없음 */
+.custom-drawer {
+  width: 250px !important;
+  background-color: white !important;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.drawer-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.drawer-footer {
+  position: fixed;
+  bottom: 150px;
+  left: 20px;
+}
+
+@media (max-width: 960px) {
+  .custom-drawer {
+    width: 100% !important;
+    padding-top: 80px;
+  }
+}
+.active-drawer-item .v-list-item-title {
+  color: #76a84c !important;
+}
+
+.v-list-item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
+}
+
+.gr {
+  color: gray !important;
+}
+
+.logo1 {
+  background-image: url("../../img/logo.png");
+  background-size: cover;
+  width: 150px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.footer-top-row {
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.footer-right-combined {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-right-text {
+  text-align: right;
+}
+
+.sns-icons {
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.family-site {
+  margin-bottom: 0.2rem;
+}
+
+.namoo-shop {
+  margin-top: 0;
+  line-height: 1;
+}
+
+.contact-address-group {
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.privacy-policy-group {
+  text-align: right;
+  margin-left: auto;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  word-wrap: break-word;
+}
+
+.contact-row {
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+}
+
+.data12 {
+  font-size: 12px;
+}
+
+.data14 {
+  font-size: 14px;
+}
+
+.data24 {
+  font-size: 24px;
+}
+
+.scroll-to-top-wrapper {
+  position: fixed !important;
+  right: 16px !important;
+  bottom: 280px !important;
+  z-index: 9999 !important;
+}
+
+.scroll-to-top {
+  position: relative !important;
+  bottom: auto !important;
+  right: auto !important;
+}
+
+@media (max-width: 600px) {
+  .scroll-to-top-wrapper {
+    display: none !important;
+  }
+  .logo1 {
+    width: 100px;
+    height: 35px;
+  }
+  .footer-top-row {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .footer-right-combined {
+    align-items: flex-end;
+    max-width: calc(100% - 110px);
+  }
+  .footer-right-text {
+    text-align: right;
+    width: 100%;
+  }
+  .sns-icons {
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .privacy-policy-group {
+    text-align: left !important;
+    align-items: flex-start !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    min-height: unset !important;
+  }
+  .data24 {
+    font-size: 18px;
+  }
+  .data14 {
+    font-size: 12px;
+  }
+  .data12 {
+    font-size: 11px;
+  }
+  h5, h3 {
+    margin: 0;
+  }
+  .mt14 {
+    margin-top: 40px !important;
+  }
+}
+@media (max-width: 400px) {
+  .footer-top-row {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .logo1 {
+    width: 100px;
+    height: 35px;
+    flex-shrink: 0;
+  }
+  .footer-right-combined {
+    align-items: flex-end !important;
+    max-width: calc(100% - 110px);
+  }
+  .footer-right-text {
+    text-align: right !important;
+    width: 100%;
+  }
+  .sns-icons {
+    justify-content: flex-end !important;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .contact-address-group,
+  .privacy-policy-group {
+    max-width: 100% !important;
+    width: 100% !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+  .privacy-policy-group {
+    display: block !important;
+    margin-top: 1rem !important;
+    justify-content: initial !important;
+    align-items: initial !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
+  .privacy-policy-group > h5 {
+    text-align: left !important;
+    width: 100% !important;
+    margin: 0 0 0.3rem 0 !important;
+  }
+}
+.mt14 {
+  margin-top: 100px;
 }
 
 .what {
@@ -330,7 +627,7 @@ ul, ol, li {
     width: 80% !important;
     align-items: center;
   }
-  .v-slide-group__wrapper {
+  .slide-card .v-slide-group__wrapper {
     overflow-x: auto !important;
   }
   .artist-img {
@@ -693,7 +990,7 @@ ArtistTop.vue
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: clamp(10px, 7.8125vw, 150px);
+  gap: clamp(10px, 5.2083vw, 150px);
 }
 @media (max-width: 600px) {
   .actors-info {
@@ -701,9 +998,10 @@ ArtistTop.vue
   }
 }
 .actors-info .actors-img {
+  display: block;
   width: clamp(360px, 30.4167vw, 584px);
   height: auto !important;
-  aspect-ratio: 584/800;
+  aspect-ratio: 576/780;
   border: 1px solid #000;
   border-radius: 10px;
 }
@@ -772,38 +1070,53 @@ ArtistTop.vue
 /*==================
 ArtistTabs.vue
 ==================*/
-.actors-tab {
-  border: 1px solid red;
-  all: unset !important;
+.tab-btn-group {
+  margin-top: clamp(15px, 1.1979vw, 23px);
 }
-.actors-tab .actors-tab-btn {
-  all: unset;
-  color: #83A667;
-  height: auto !important;
-  margin-right: 0.625em !important;
-  padding: 0.625em 1.25em !important;
-  font-size: clamp(10px, 0.83vw, 16px);
-  text-transform: capitalize;
-  border: 1px solid #83A667;
-  border-radius: 50px !important;
+@media (max-width: 600px) {
+  .tab-btn-group {
+    width: 40%;
+  }
 }
-.actors-tab .actors-tab-btn:focus, .actors-tab .actors-tab-btn:active, .actors-tab .actors-tab-btn:hover, .actors-tab .actors-tab-btn.active-btn {
-  text-shadow: none;
-  box-shadow: none;
-  color: white;
-  background-color: #83a667;
+@media (max-width: 400px) {
+  .tab-btn-group {
+    width: 60%;
+  }
+}
+.tab-btn-group .top-btn {
+  margin-top: auto;
+}
+@media (max-width: 600px) {
+  .tab-btn-group .top-btn {
+    margin-top: 5px !important;
+  }
 }
 
-.actors-tab-content {
-  border: 1px solid blue;
-}
 .actors-tab-content .actors-tab-content-group {
-  border: 1px dashed blue;
   all: unset;
 }
 .actors-tab-content .actors-tab-content-group .actors-tab-content-outline {
-  border: 1px solid coral;
+  border: 1px solid #000;
+  aspect-ratio: 576/780;
   border-radius: 10px;
+}
+
+/*==================
+ArtistFilmography.vue
+==================*/
+.filmo .filmo-profile .filmo-slide {
+  aspect-ratio: 773/1104;
+  max-width: 100%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+.filmo .filmo-profile .filmo-slide.v-window, .filmo .filmo-profile .filmo-slide.v-carousel-item, .filmo .filmo-profile .filmo-slide.v-img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100% !important;
 }
 
 .artist-section {
@@ -861,7 +1174,7 @@ ArtistTabs.vue
 }
 
 .faq-wrap {
-  border: 1px solid red;
+  border-top: 3px solid #000;
 }
 
 .faq-answer {
@@ -898,7 +1211,7 @@ ArtistTabs.vue
 }
 
 .divider-black {
-  height: 3px;
+  height: 2px;
   background-color: black;
   margin-top: 12px;
 }

@@ -45,24 +45,17 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { computed } from 'vue'
 import { artistList } from '@/data/artistList.js'
 
-const imageMap = import.meta.glob('../../assets/img/actors/profile/*.{jpg,png}', {eager: true })
+const imageMap = import.meta.glob('../../assets/img/actors/profile/*.{jpg,png}', { eager: true })
 
-const artists = artistList.map(artist => {
-    const actorsImg = imageMap[`../../assets/img/actors/${artist.url}`]
-    return {
-        ...artist,
-        url: actorsImg ? actorsImg.default : '',
-    }
-})
+const artists = artistList.map(artist => ({
+  ...artist,
+  url: imageMap[`../../assets/img/actors/profile/${artist.url}`]?.default || ''
+}))
 
 const props = defineProps({ artistId: String })
-const artist = ref(artists.find(a => a.id === props.artistId))
-
-watch(() => props.artistId, (newId) => {
-  artist.value = artists.find(a => a.id === newId)
-})
+const artist = computed(() => artists.find(a => a.id === props.artistId))
 
 </script>

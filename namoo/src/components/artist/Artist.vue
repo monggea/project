@@ -45,7 +45,7 @@ const imageMap = import.meta.glob('@/assets/img/actors/profile/*.{jpg,png}',{
 
 const artists = artistList.map(artist =>({
     ...artist,
-    url: imageMap[`/src/assets/img/actors/${artist.url}`],
+    url: imageMap[`/src/assets/img/actors/profile/${artist.url}`],
 }))
 
 const router = useRouter()

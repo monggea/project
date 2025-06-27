@@ -4,13 +4,12 @@
           <video
           width="100%"
           autoplay
-          muted
           style="object-fit: cover;"
-          :src="video">
+          :src="videoSrc">
           </video>
         </div>
 <v-container fluid >
-    <v-row >
+    <v-row  >
    
 
 <!--what do you want-->
@@ -30,7 +29,7 @@
           >
           <div class="">
           <p class="s-text">Artist.</p>
-          <v-btn class="more " text :to="'/Artist'" >
+          <v-btn class="artist-viewmore btn16 " text :to="'/Artist'" >
           view more →</v-btn>
           </div>
 <v-window :aspect-ratio="0.5">
@@ -50,7 +49,7 @@
                 <v-card
                   class="slide-card "
                   :class="[selectedClass]"
-                  :style="{ minWidth: isMobile ? '90px' : '280px', }"
+                  :style="{ minWidth: isMobile ? '100px' : '280px', }"
                   color="grey-lighten-1"
                   @click="toggle">
                   <v-img class="artist-img" :src="n.image" cover/>
@@ -75,32 +74,33 @@
     </v-row>
 
 <!--works-->
-      <v-row>
-      <v-col cols="12" md="7" class="works" >
+      <v-row class="">
+      <v-col cols="12" md="8" class="works" >
        <div class="w-box">
-        <p class="w-text">Works.
-          <v-btn class="more2" text :to="'/News'" >
+        <p class="w-text">Works.</p>
+          <v-btn class="works-viewmore btn16" text :to="'/Newsroom'" >
           view more →</v-btn>
-        </p>
+        
         </div>
       
-      <!--works slider-->  
+<!--works slider-->  
        <div class="">
         <v-carousel 
         class="work-slide"
         hide-delimiters
-        cycle
+        width="100%"
         :interval="2000">
+        
 
         <!-- 왼쪽 화살표 -->
           <template #prev>
-            <v-btn icon class="btn44" >
+            <v-btn icon class="btn " >
               <v-icon size="36">mdi-chevron-left</v-icon>
             </v-btn>
           </template>
         <!-- 오른쪽 화살표 -->
           <template #next>
-            <v-btn icon class="btn44">
+            <v-btn icon class="btn">
               <v-icon size="36">mdi-chevron-right</v-icon>
             </v-btn>
           </template>
@@ -110,6 +110,14 @@
             :key="i" 
             :src="item.src" 
             contain>
+            <div class="carousel-overlay-text">
+                <p  class="carousel-overlay-text-title ">{{ item.title }}</p>
+                <p  class="carousel-overlay-text-subtitle">{{ item.subtitle }}</p>  
+                <div class="carousel-overlay-text-subtitle2" v-html="item.subtitle2"></div>
+                
+                <p  class="carousel-overlay-text-subtitle3">{{ item.subtitle3 }}</p>  
+              </div>
+              
           </v-carousel-item>
         </v-carousel>
         </div>
@@ -117,48 +125,47 @@
         <div class="news d-flex">
         <div class="mt-10 pr-5 " >
           <v-divider length="100%" thickness="4" class="mt-5 mb-5 divider-color" ></v-divider>
-          <h3 class="nt1">이정하의 낯선 얼굴..‘굿보이’ 특별출연으로 빛낸 존재감</h3>
-          <h5 class="pt-2">탄탄한 전개와 연출로 인기를 견인 중인 JTBC 토일드라마‘굿보이’
-              (연출 심나연,극본 이대일,제작SLL,스튜디오앤뉴,드라마 하우...</h5>
-          <div class="news-date">
-            <p>2025-06-09
-              <v-btn class="news-icon" text :to="'/News'" style="box-shadow: none;">
-              <v-icon class="news-icon-arrow" >mdi-arrow-right</v-icon>  
-              </v-btn>
-            </p>
-          </div>
-          <v-divider length="100%" thickness="2" class="mt-5" ></v-divider>
-          </div>
+          <h3 class="stitle24-2">이정하의 낯선 얼굴..‘굿보이’ 특별출연으로 빛낸 존재감</h3>
+            <h5 class="pt-2">탄탄한 전개와 연출로 인기를 견인 중인 JTBC 토일드라마‘굿보이’
+                             (연출 심나연,극본 이대일,제작SLL,스튜디오 앤뉴,드라마 하우...)</h5>
+              <div class="news-date">
+                <p>2025-06-09
+                  <v-btn class="news-icon" text href="https://m.entertain.naver.com/home/article/109/0005324489" style="box-shadow: none;">
+                  <v-icon class="news-icon-arrow" >mdi-arrow-right</v-icon>  
+                  </v-btn>
+                </p>
+                  </div>
+                  <v-divider length="100%" thickness="2" class="mt-5" ></v-divider>
+                  </div>
         
         <div class="mt-10 pr-5" >
           <v-divider length="100%" thickness="4" class="mt-5 mb-5" ></v-divider>
-          <h3 class="nt2">박은빈, 4년 연속 日 팬 파티 개최…탄탄한 현지 팬덤 입증</h3>
-          
-          <h5 class="pt-2">배우 박은빈이 일본에서 열린 팬 파티를 성공적으로 마무리했다.
-             박은빈은 지난 6월 7일과 8일, 양일간 일본 도쿄 카나데비아 홀에...</h5>
+          <h3 class="stitle24-2">박은빈, 4년 연속 日 팬 파티 개최…탄탄한 현지 팬덤 입증</h3>
+            <h5 class="pt-2">배우 박은빈이 일본에서 열린 팬 파티를 성공적으로 마무리했다.
+                             박은빈은 지난 6월 7일과 8일, 양일간 일본 도쿄 카나데비아 홀에...</h5>
              <div class="news-date ">
-            <p>2025-06-12
-              <v-btn  class="news-icon" text :to="'/News'" style="box-shadow: none;">
-              <v-icon >mdi-arrow-right</v-icon>  
-              </v-btn>
-            </p>
-          </div>
-          <v-divider length="100%" thickness="2" class="mt-5" ></v-divider>
-        </div>
+                <p>2025-06-12
+                  <v-btn  class="news-icon" text href="https://m.entertain.naver.com/home/article/052/0002203201" style="box-shadow: none;">
+                  <v-icon >mdi-arrow-right</v-icon>  
+                  </v-btn>
+                </p>
+                </div>
+                <v-divider length="100%" thickness="2" class="mt-5" ></v-divider>
+                </div>
 
         <div class="mt-10 "  >
           <v-divider length="100%" thickness="4" class="mt-5 mb-5" ></v-divider>
-          <h3 class="nt3">'ONE' 이정하·김도완, 본격 참교육 나선다.육준서 첫 등장</h3>
-          <h5 class="pt-2">'ONE : 하이스쿨 히어로즈'가 바로 내일(6일) 공개될 5~6화 스틸을 전격 공개했다. 5월 30일(금) 1~4화 공개와 동시에 웨이브...</h5>
-          <div class="news-date">
-            <p>2025-06-18
-              <v-btn class="news-icon" text :to="'/News'" style="box-shadow: none;">
-              <v-icon >mdi-arrow-right</v-icon>  
-              </v-btn>
-            </p>
-          </div>
-          <v-divider length="100%" thickness="2" class="mt-5" ></v-divider>
-        </div>
+          <h3 class="stitle24-2">'ONE' 이정하·김도완, 본격 참교육 나선다.육준서 첫 등장</h3>
+            <h5 class="pt-2">'ONE : 하이스쿨 히어로즈'가 바로 내일(6일) 공개될 5~6화 스틸을 전격 공개했다. 5월 30일(금) 1~4화 공개와 동시에 웨이브...</h5>
+              <div class="news-date">
+                <p>2025-06-18
+                  <v-btn class="news-icon" text href="https://m.entertain.naver.com/home/article/117/0003950352" style="box-shadow: none;">
+                  <v-icon >mdi-arrow-right</v-icon>  
+                  </v-btn>
+                </p>
+                  </div>
+                  <v-divider length="100%" thickness="2" class="mt-5" ></v-divider>
+                  </div>
         </div>
       </v-col>
          
@@ -167,12 +174,24 @@
   
 </template>
 
-<style >
-/* 슬라이더 방향 아이콘*/
-.v-slide-group__prev, .v-slide-group__next{ 
-  font-size: 4vw; color: white; transform: translateY(10vh);}
-.v-application__wrap{min-height: 40dvh;}
+<style lang="scss" scoped>
+@import '../assets/css/components/home';
+</style>
 
+<style >
+/* 슬라이더 방향 아이콘(scss페이지에 적용시 안됨) */
+.v-slide-group__prev, .v-slide-group__next{ 
+  font-size: 2.5vw; color: white; }
+.v-application__wrap{min-height: 40dvh;}
+.v-btn{padding: 0px;}
+
+
+
+/*works영역 반응형
+@media screen and (min-width:960px) and (max-width:1669px){
+.v-img__img{width: 150% !important;}
+.v-col-md-7{width: 150% !important;}
+}*/
 </style>
 
 
@@ -183,22 +202,19 @@
 //import Swiper from 'swiper';
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-const video = new URL('@/assets/img/video.mp4', import.meta.url).href
-
-
+  const videoSrc = new URL('@/assets/img/video.mp4', import.meta.url).href
 
   const model = ref(null)
 
   const items = [
- {id:0, image: new URL(`@/assets/img/actors/kang.jpg`,  import.meta.url).href},
- {id:1, image: new URL(`@/assets/img/actors/김효진.jpg`, import.meta.url).href},
- {id:2, image: new URL(`@/assets/img/actors/노정의.jpg`, import.meta.url).href},
- {id:3, image: new URL(`@/assets/img/actors/구교환.jpg`, import.meta.url).href},
- {id:4, image: new URL(`@/assets/img/actors/김재경.jpg`, import.meta.url).href},
- {id:5, image: new URL(`@/assets/img/actors/박지현.jpg`, import.meta.url).href},
- {id:6, image: new URL(`@/assets/img/actors/송강.jpg`, import.meta.url).href},
- {id:7, image: new URL(`@/assets/img/actors/이준기.jpg`, import.meta.url).href},
- {id:7, image: new URL(`@/assets/img/actors/차서원.jpg`, import.meta.url).href},
+ {id:0, image: new URL(`@/assets/img/actors/profile/Kangkiyoung.jpg`,  import.meta.url).href},
+ {id:1, image: new URL(`@/assets/img/actors/profile/Gookyohwan.jpg`, import.meta.url).href},
+ {id:2, image: new URL(`@/assets/img/actors/profile/Parkeunbin.jpg`, import.meta.url).href},
+ {id:3, image: new URL(`@/assets/img/actors/profile/Kimjoohyuck.jpg`, import.meta.url).href},
+ {id:4, image: new URL(`@/assets/img/actors/profile/Rohjeongeui.jpg`, import.meta.url).href},
+ {id:5, image: new URL(`@/assets/img/actors/profile/songKang.jpg`, import.meta.url).href},
+ {id:6, image: new URL(`@/assets/img/actors/profile/Leejungha.jpg`, import.meta.url).href},
+ {id:7, image: new URL(`@/assets/img/actors/profile/Dojiwon.jpg`, import.meta.url).href},
         
 ]
 
@@ -216,7 +232,12 @@ onBeforeUnmount(() => {
 })
 
 const imgs = ref([
-   { src: new URL('@/assets/img/one.png', import.meta.url).href },
+   { src: new URL('@/assets/img/one.png', import.meta.url).href, 
+     title:`Wavve`,
+     subtitle:`ONE:하이스쿨 히어로즈`,
+     subtitle2:`#이정하 &nbsp&nbsp#김도완`,
+     subtitle3:`2025.06.11~`
+     },
    { src: new URL('@/assets/img/박은빈뉴스.jpg', import.meta.url).href },
    { src: new URL('@/assets/img/이정하뉴스.jpg', import.meta.url).href },
 ])

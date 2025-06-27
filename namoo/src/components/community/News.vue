@@ -13,7 +13,7 @@
 <script setup>
 
 import { ref } from 'vue'
-import CommunityBase from '@/components/CommunityBase.vue'
+import CommunityBase from '@/components/community/CommunityBase.vue'
 import newsData from '@/data/newsList'
 
 const imageMap = import.meta.glob('@/assets/img/news/*.{jpg,png}', {

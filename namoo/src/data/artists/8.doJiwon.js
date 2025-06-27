@@ -1,7 +1,7 @@
 export default [
     { 
         id: 'do-jiwon',
-        url: 'profile/Dojiwon.jpg',
+        url: 'Dojiwon.jpg',
         name: 'Do ji won',
         mName:`Do<br>ji won`,
         kName:'도지원',

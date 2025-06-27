@@ -1,7 +1,7 @@
 export default [
     { 
         id: 'park-eunbin',
-        url: 'profile/Parkeunbin.jpg',
+        url: 'Parkeunbin.jpg',
         name: 'park eun bin',
         mName:`park<br>eun bin`,
         kName:'박은빈',

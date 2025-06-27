@@ -1,6 +1,4 @@
 <template>
-
-
     <CommunityBase
         :items="noticeList"
         type="notice"
@@ -13,7 +11,7 @@
 <script setup>
 import { ref } from 'vue'
 import {useRouter} from 'vue-router'
-import CommunityBase from '@/components/CommunityBase.vue'
+import CommunityBase from '@/components/community/CommunityBase.vue'
 import NoticeSlide from '@/components/community/NoticeSlide.vue'
 import noticeList from '@/data/noticeList'
 

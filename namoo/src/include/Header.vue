@@ -7,8 +7,8 @@
     :class="[{ 'nav-border': isScrolled }, 'transition-navbar']"
   >
     <!-- 로고 -->
-    <v-toolbar-title class="fixed-title">
-      <RouterLink to="/" @click.native="closeDrawer">
+    <v-toolbar-title class="fixed-title mt-3">
+      <RouterLink to="/home" @click.native="closeDrawer">
         <div class="but"></div>
       </RouterLink>
     </v-toolbar-title>
@@ -22,38 +22,83 @@
         to="/company"
         class="menu-btn"
         :class="{ 'active-tab': $route.path === '/company' }"
-        >COMPANY</v-btn
-      >
+      >COMPANY</v-btn>
+
       <v-btn
         text
         to="/artist"
         class="menu-btn"
         :class="{ 'active-tab': $route.path === '/artist' }"
-        >ARTIST</v-btn
-      >
-      <v-btn
-        text
-        to="/news"
-        class="menu-btn"
-        :class="{ 'active-tab': $route.path === '/community' }"
-        >COMMUNITY</v-btn
-      >
-      <v-btn
-        text
-        to="/audition"
-        class="menu-btn"
-        :class="{ 'active-tab': $route.path === '/audition' }"
-        >AUDITION</v-btn
-      >
+      >ARTIST</v-btn>
+
+      <!-- COMMUNITY 드롭다운 -->
+      <template v-if="showCommunityDropdown">
+        <v-menu open-on-hover offset-y>
+          <template #activator="{ props }">
+            <v-btn
+              text
+              v-bind="props"
+              class="menu-btn"
+              :class="{ 'active-tab': $route.path.startsWith('/news') }"
+            >COMMUNITY</v-btn>
+          </template>
+          <v-list>
+            <v-list-item :to="'/news'">
+              <v-list-item-title>NEWS</v-list-item-title>
+            </v-list-item>
+            <v-list-item :to="'/notice'">
+              <v-list-item-title>NOTICE</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </template>
+      <template v-else>
+        <v-btn
+          text
+          class="menu-btn"
+          :class="{ 'active-tab': $route.path === '/news' }"
+          @click="navigate('/news')"
+        >COMMUNITY</v-btn>
+      </template>
+
+      <!-- AUDITION 드롭다운 -->
+      <template v-if="showAuditionDropdown">
+        <v-menu open-on-hover offset-y>
+          <template #activator="{ props }">
+            <v-btn
+              text
+              v-bind="props"
+              class="menu-btn"
+              :class="{ 'active-tab': $route.path.startsWith('/audition') }"
+            >AUDITION</v-btn>
+          </template>
+          <v-list>
+            <v-list-item :to="'/audition'">
+              <v-list-item-title>INFORMATION</v-list-item-title>
+            </v-list-item>
+            <v-list-item :to="'/faq'">
+              <v-list-item-title>FAQ</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </template>
+      <template v-else>
+        <v-btn
+          text
+          class="menu-btn"
+          :class="{ 'active-tab': $route.path === '/audition' }"
+          @click="navigate('/audition')"
+        >AUDITION</v-btn>
+      </template>
     </div>
 
-    <!-- 햄버거 / 닫기 버튼 (lg 이하) -->
+    <!-- 모바일 메뉴 버튼 -->
     <v-btn icon class="d-lg-none" @click="drawer = !drawer" ripple="false">
       <v-icon>{{ drawer ? 'mdi-close' : 'mdi-menu' }}</v-icon>
     </v-btn>
   </v-app-bar>
 
-  <!-- 드로어 메뉴 -->
+  <!-- 모바일 드로어 메뉴 -->
   <v-navigation-drawer
     v-if="drawer"
     v-model="drawer"
@@ -70,25 +115,66 @@
       >
         <v-list-item-title>COMPANY</v-list-item-title>
       </v-list-item>
+
       <v-list-item
         @click="navigate('/artist')"
         :class="{ 'active-drawer-item': activeDrawerItem === '/artist' }"
       >
         <v-list-item-title>ARTIST</v-list-item-title>
       </v-list-item>
+
+      <!-- COMMUNITY + 서브 -->
       <v-list-item
-        @click="navigate('/community')"
-        :class="{ 'active-drawer-item': activeDrawerItem === '/community' }"
+        @click="toggleSubCommunity"
+        :class="{ 'active-drawer-item': activeDrawerItem.startsWith('/community') }"
       >
         <v-list-item-title>COMMUNITY</v-list-item-title>
       </v-list-item>
+      <v-slide-y-transition>
+        <div v-if="showCommunitySubmenu" class="pl-6">
+          <v-list-item @click="navigate('/news')">
+            <v-list-item-title class="gr">NEWS</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="navigate('/notice')">
+            <v-list-item-title class="gr">NOTICE</v-list-item-title>
+          </v-list-item>
+        </div>
+      </v-slide-y-transition>
+
+      <!-- AUDITION + 서브 -->
       <v-list-item
-        @click="navigate('/audition')"
-        :class="{ 'active-drawer-item': activeDrawerItem === '/audition' }"
+        @click="toggleSubAudition"
+        :class="{ 'active-drawer-item': activeDrawerItem.startsWith('/audition') }"
       >
         <v-list-item-title>AUDITION</v-list-item-title>
       </v-list-item>
+      <v-slide-y-transition>
+        <div v-if="showAuditionSubmenu" class="pl-6 ">
+          <v-list-item @click="navigate('/audition')">
+            <v-list-item-title class="gr">INFORMATION</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="navigate('/faq')">
+            <v-list-item-title class="gr">FAQ</v-list-item-title>
+          </v-list-item>
+        </div>
+      </v-slide-y-transition>
     </v-list>
+
+    <!-- SNS 아이콘 하단 고정 -->
+    <div class="drawer-footer d-flex align-center">
+      <v-btn icon href="" target="_blank" aria-label="Twitter">
+        <v-icon>mdi-twitter</v-icon>
+      </v-btn>
+      <v-btn icon href="" target="_blank" aria-label="Instagram">
+        <v-icon>mdi-instagram</v-icon>
+      </v-btn>
+      <v-btn icon href="" target="_blank" aria-label="YouTube">
+        <v-icon>mdi-youtube</v-icon>
+      </v-btn>
+      <v-btn icon href="" target="_blank" aria-label="Blog">
+        <v-icon>mdi-web</v-icon>
+      </v-btn>
+    </div>
   </v-navigation-drawer>
 </template>
 
@@ -100,7 +186,9 @@ export default {
       drawer: false,
       isScrolled: false,
       isOpaque: false,
-      activeDrawerItem: "", // 드로어 메뉴에서 활성화된 메뉴 경로
+      activeDrawerItem: "",
+      showAuditionSubmenu: false,
+      showCommunitySubmenu: false,
     };
   },
   mounted() {
@@ -109,10 +197,17 @@ export default {
   beforeUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   },
+  computed: {
+    showAuditionDropdown() {
+      return this.$route.path.startsWith("/audition") && this.$route.path !== "/audition";
+    },
+    showCommunityDropdown() {
+      return this.$route.path.startsWith("/community") && this.$route.path !== "/community";
+    },
+  },
   watch: {
     drawer(val) {
       if (val) {
-        // 드로어 열릴 때 현재 라우트 경로를 activeDrawerItem으로 설정
         this.activeDrawerItem = this.$route.path;
       }
     },
@@ -124,8 +219,10 @@ export default {
       this.isOpaque = scrollY > 1;
     },
     navigate(path) {
-      this.activeDrawerItem = path; // 클릭한 경로를 저장
+      this.activeDrawerItem = path;
       this.drawer = false;
+      this.showAuditionSubmenu = false;
+      this.showCommunitySubmenu = false;
       setTimeout(() => {
         if (this.$route.path !== path) {
           this.$router.push(path);
@@ -134,15 +231,25 @@ export default {
     },
     closeDrawer() {
       this.drawer = false;
+      this.showAuditionSubmenu = false;
+      this.showCommunitySubmenu = false;
       if (this.$route.path !== "/home") {
         this.$router.push("/home");
       }
+    },
+    toggleSubAudition() {
+      this.showAuditionSubmenu = !this.showAuditionSubmenu;
+      this.activeDrawerItem = "/audition";
+    },
+    toggleSubCommunity() {
+      this.showCommunitySubmenu = !this.showCommunitySubmenu;
+      this.activeDrawerItem = "/community";
     },
   },
 };
 </script>
 
-<style scoped>
+<style sc>
 .v-app-bar {
   width: 100%;
   height: 120px;
@@ -165,13 +272,7 @@ export default {
   transform: translateY(-50%);
   cursor: pointer;
 }
-.but {
-  background-image: url('@/assets/img/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 65px;
-}
+
 .menu-wrapper {
   display: flex;
   align-items: center;
@@ -206,6 +307,27 @@ export default {
 }
 
 /* 모바일 대응 (헤더 작아짐) */
+.but {
+  background-image: url("@/assets/img/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 50px;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .logo-img {
+    width: 100px;
+    height: 35px;
+  }
+}
+
+.logo-area {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 @media (max-width: 960px) {
   .custom-drawer {
     top: 80px;

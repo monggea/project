@@ -1,7 +1,7 @@
 export default [
     { 
         id: 'roh-jeongeui',
-        url: 'profile/Rohjeongeui.jpg',
+        url: 'Rohjeongeui.jpg',
         name: 'roh jeong eui',
         mName:`roh<br>jeong eui`,
         kName:'노정의',

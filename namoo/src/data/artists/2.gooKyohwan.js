@@ -1,7 +1,7 @@
 export default [
     { 
         id: 'goo-kyohwan',
-        url: 'profile/Kookyohwan.jpg',
+        url: 'Gookyohwan.jpg',
         name: 'goo kyo hwan',
         mName:`goo<br>kyo hwan`,
         kName:'구교환',

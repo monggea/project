@@ -1,6 +1,6 @@
 <template>
     <v-container fluid >
-        <v-row class="body">
+        <v-row class="body align-end">
             <v-col cols="12" md="7"  >
                 <div class="bg ">
                 <v-img src="../../assets/img/introductionbg.png" />
@@ -14,7 +14,3 @@
         </v-row>
     </v-container>
 </template>
-
-<style lang="scss" scoped>
-// @import '../../assets/css/pages/company/intro';
-</style>

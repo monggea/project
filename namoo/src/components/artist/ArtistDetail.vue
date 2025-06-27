@@ -1,29 +1,18 @@
 <template>
-    <ArtistTop :artistId="artistId"/>
-
-<v-container fluid>
-    <v-row>
-        <v-col cols="12" sm="6"></v-col>
-        <v-col cols="12" sm="6"></v-col>
-    </v-row>
-
-
-    <!--====================
-    이미지 버튼
-    =====================-->
-
-    <v-row>
-    </v-row>
-</v-container>
-
+    <Top :artistId="artistId"/>
+    <Filmography :artistId="artistId"/>
+    <Tabs :artistId="artistId"/>
     
 </template>
 
 <script setup>
 
 import {useRoute} from 'vue-router'
-import ArtistTop from '@/components/artist/ArtistTop.vue'
+import Top from '@/components/artist/ArtistTop.vue'
+import Tabs from '@/components/artist/ArtistTabs.vue'
+import Filmography from '@/components/artist/ArtistFilmography.vue'
 
 const route=useRoute()
 const artistId = route.params.id
+
 </script>

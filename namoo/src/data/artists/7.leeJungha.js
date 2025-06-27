@@ -1,7 +1,7 @@
 export default [
     { 
         id: 'lee-jungha',
-        url: 'profile/Leejungha.jpg',
+        url: 'Leejungha.jpg',
         name: 'lee jung ha',
         mName:`lee<br>jung ha`,
          kName:'이정하',
