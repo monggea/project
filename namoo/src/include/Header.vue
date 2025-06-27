@@ -16,6 +16,7 @@
     <v-spacer />
 
     <!-- 데스크탑 메뉴 (lg 이상) -->
+      
     <div class="menu-wrapper d-none d-lg-flex">
       <v-btn
         text
@@ -202,7 +203,10 @@ export default {
       return this.$route.path.startsWith("/audition") && this.$route.path !== "/audition";
     },
     showCommunityDropdown() {
-      return this.$route.path.startsWith("/community") && this.$route.path !== "/community";
+      return this.$route.path.startsWith("/news") && this.$route.path !== "/news";
+    },
+    showCompanyDropdown() {
+      return this.$route.path.startsWith("/company") && this.$route.path !== "/company";
     },
   },
   watch: {

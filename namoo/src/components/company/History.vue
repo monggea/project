@@ -144,7 +144,7 @@ const history = [
 </script>
 
 <style lang="scss" scoped>
-// @import '../../assets/css/pages/company/history';
+@import '../../assets/css/pages/company/history';
 </style>
 
 <!--vuetify 고정값 변경 style(scss페이지에 적용시 안됨) -->

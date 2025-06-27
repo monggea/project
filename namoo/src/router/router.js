@@ -11,7 +11,6 @@ import NoticeDetail from '@/components/community/NoticeDetail.vue';
 
 import Actors from '@/components/artist/Artist.vue';
 import ArtistDetail from '@/components/artist/ArtistDetail.vue';
-import test from '@/components/artist/ArtistFilmography.vue';
 
 import Info from '@/components/audition/Info.vue';
 import Faq from '@/components/audition/Faq.vue';
@@ -32,9 +31,6 @@ const routes = [
 
   { path: '/audition', component:Info },
   { path: '/FAQ', component:Faq },
-
-
-  { path: '/test', component:test },
 
 ]
 
